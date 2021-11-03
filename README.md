@@ -1,0 +1,2 @@
+# Journal
+News App
