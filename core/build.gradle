@@ -1,22 +1,20 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-kapt'
-    id("dagger.hilt.android.plugin")
 }
+
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.jogayed.tempo.Journal"
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "NEWS_API_KEY", NEWS_API_KEY)
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -34,25 +32,13 @@ android {
     }
 }
 
-
 dependencies {
     implementation "com.google.android.material:material:${versions.material_version}"
     implementation androidx.core_ktx
     implementation androidx.appcompat
-    implementation androidx.constraintlayout
-    implementation("androidx.cardview:cardview:1.0.0")
-    implementation lifecycle.livedata_ktx
     androidTestImplementation androidx.test_junit
     androidTestImplementation androidx.test_espresso
     testImplementation "junit:junit:${versions.junit_version}"
-
-
-    implementation project(path: ':core')
-
-    //Coroutine
-    implementation coroutines.android
-    implementation coroutines.core
-    implementation coroutines.test
 
     //LifeCycle
     implementation lifecycle.viewmodel_ktx
@@ -60,24 +46,9 @@ dependencies {
     implementation lifecycle.extensions
     implementation lifecycle.livedata_ktx
 
-    //androidx
-    implementation androidx.fragment_ktx
-    implementation androidx.swiperefreshlayout
-
-    //Hilt
-    implementation dagger_hilt.hilt_android
-    kapt dagger_hilt.hilt_compiler
-
-    //Retrofit
-    implementation retrofit2.retrofit
-    implementation retrofit2.converter_gson
-    implementation retrofit2.okhttp_logging_interceptor
-
-    //Room
-    implementation room.room_runtime
-    implementation room.room_ktx
-    kapt room.room_compiler
-
-    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    //Coroutine
+    implementation coroutines.android
+    implementation coroutines.core
+    implementation coroutines.test
 
 }

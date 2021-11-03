@@ -1,2 +1,3 @@
 rootProject.name = "Journal"
 include ':app'
+include ':core'
