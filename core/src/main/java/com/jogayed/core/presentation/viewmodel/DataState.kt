@@ -1,16 +1,6 @@
 package com.jogayed.core.presentation.viewmodel
 
 
-/*
-sealed class DataState<out T> {
-    object Initial : DataState<Nothing>()
-    object Loading : DataState<Nothing>()
-    data class Error(val throwable: Throwable) : DataState<Nothing>()
-    data class Success<out T>(val data: T) : DataState<T>()
-}
-
-*/
-
 sealed class DataState<out T>(
     val loading: Boolean,
     private val data: T? = null
@@ -18,10 +8,10 @@ sealed class DataState<out T>(
 
     fun data(): T? = data
 
-    object Initial : DataState<Nothing>(false)
+    object Idle : DataState<Nothing>(false)
 
-    class Loading<T>(isLoading: Boolean, val cachedData: T? = null) : DataState<T>(
-        loading = isLoading,
+    class Loading<T>(val cachedData: T? = null) : DataState<T>(
+        loading = true,
         data = cachedData
     )
 

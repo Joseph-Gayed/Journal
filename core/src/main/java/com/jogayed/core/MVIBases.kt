@@ -8,9 +8,7 @@ interface Action
 /**
  * Interface definition of the ViewStare(Model in MVI)
  */
-interface ViewState {
-    fun initialState(): ViewState
-}
+interface ViewState
 
 
 /**

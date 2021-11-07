@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/page_margin"
+        tools:context="com.jogayed.tempo.journal.news.presentation.view.news_details.NewsDetailsFragment">
+
+        <!--Image-->
+        <ImageView
+            android:id="@+id/iv_news_image"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/item_image_height"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/image_place_holder"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/image_place_holder" />
+
+        <!--author-->
+        <TextView
+            android:id="@+id/tv_news_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/divider_height"
+            android:background="@color/transparent_black"
+            android:paddingHorizontal="@dimen/page_margin"
+            android:text="@string/author_format"
+            android:textColor="@color/color_secondary"
+            android:textSize="@dimen/item_source_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/tv_news_date"
+            app:layout_constraintStart_toStartOf="@+id/iv_news_image"
+            tools:ignore="HardcodedText" />
+
+        <!--date-->
+        <TextView
+            android:id="@+id/tv_news_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent_black"
+            android:paddingHorizontal="@dimen/page_margin"
+            android:textColor="@color/color_secondary"
+            android:textSize="@dimen/item_source_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_news_image"
+            app:layout_constraintStart_toStartOf="@+id/iv_news_image"
+            tools:ignore="HardcodedText"
+            tools:text="22-11-2021 05:30 pm" />
+
+
+        <!--open source-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_visit_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/page_margin"
+            android:backgroundTint="@color/color_secondary"
+            app:layout_constraintBottom_toBottomOf="@id/iv_news_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_news_image"
+            app:srcCompat="@android:drawable/ic_dialog_info"
+            tools:ignore="ContentDescription" />
+
+
+        <!--Title-->
+        <TextView
+            android:id="@+id/tv_news_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/page_margin"
+            android:layout_marginTop="@dimen/page_margin"
+            android:text="This is a sample Text to show below the card"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="@dimen/item_title_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fab_visit_source"
+            tools:ignore="HardcodedText" />
+
+        <!--source-->
+        <TextView
+            android:id="@+id/tv_news_source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/item_card_text_margin"
+            android:text="Source"
+            android:textColor="@color/color_secondary_text"
+            android:textSize="@dimen/item_source_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/tv_news_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_news_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_news_title"
+            tools:ignore="HardcodedText" />
+
+        <!--content-->
+        <TextView
+            android:id="@+id/tv_news_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/page_margin"
+            android:layout_marginBottom="@dimen/item_card_text_margin"
+            android:lineSpacingExtra="@dimen/line_extra_space"
+            android:textColor="@color/color_primary_text"
+            android:textSize="@dimen/item_source_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/tv_news_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_news_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_news_source"
+            tools:ignore="HardcodedText"
+            tools:text="Posted \r\nApple is cutting output of iPads to save chips for its iPhones, according to the Nikkei newspaper. Julian Satterthwaite reports." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -87,3 +87,7 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+#Keystrore
+/journal.keystore
+/releaseKey.properties

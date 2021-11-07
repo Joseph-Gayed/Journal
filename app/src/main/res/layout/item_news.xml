@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/item_card_margin_h"
+    android:layout_marginBottom="@dimen/item_card_margin_v"
+    app:cardCornerRadius="@dimen/item_card_elevation"
+    app:cardElevation="@dimen/item_card_elevation"
+    app:cardUseCompatPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/page_margin">
+
+        <ImageView
+            android:id="@+id/iv_news_image"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/item_image_height"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/image_place_holder"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/image_place_holder" />
+
+        <TextView
+            android:id="@+id/tv_news_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/item_card_margin_h"
+            android:layout_marginTop="@dimen/item_card_text_margin"
+            android:text="This is a sample Text to show below the card"
+            android:textColor="@color/color_primary_text"
+            android:textSize="@dimen/item_title_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_news_image"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_news_source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Source"
+            android:textColor="@color/color_secondary_text"
+            android:textSize="@dimen/item_source_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/tv_news_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_news_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_news_title"
+            tools:ignore="HardcodedText" />
+
+        <!--content-->
+        <TextView
+            android:id="@+id/tv_news_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_card_text_margin"
+            android:layout_marginBottom="@dimen/item_card_text_margin"
+            android:lineSpacingExtra="@dimen/line_extra_space"
+            android:maxLines="2"
+            android:textColor="@color/color_primary_text"
+            android:textSize="@dimen/item_source_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/tv_news_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_news_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_news_source"
+            tools:ignore="HardcodedText"
+            tools:text="Posted \r\nApple is cutting output of iPads to save chips for its iPhones, according to the Nikkei newspaper. Julian Satterthwaite reports." />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

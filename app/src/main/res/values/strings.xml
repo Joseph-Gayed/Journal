@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Journal</string>
+    <string name="slogan_line1">  <![CDATA[For those \nwho read]]></string>
+    <string name="slogan_line2">Do not pay for paid news</string>
+    <string name="general_error_message">Something went wrong, Please try again later.</string>
+    <string name="no_data">There  is nothing to show.</string>
+    <string name="search">Search</string>
+    <string name="author_format">By: %s</string>
+    <string name="chooser_title">Open With</string>
 </resources>

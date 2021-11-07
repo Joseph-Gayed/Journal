@@ -19,3 +19,19 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class com.jogayed.tempo.journal.news.data.local.model.NewsLocalDataModel
+-keep class com.jogayed.tempo.journal.news.domain.model.NewsDomainModel
+-keep class com.jogayed.tempo.journal.news.domain.model.NewsSearchParams
+-keep class com.jogayed.tempo.journal.news.presentation.model.NewsUiModel
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep class * extends com.bumptech.glide.module.AppGlideModule {
+ <init>(...);
+}
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+-keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {
+  *** rewind();
+}

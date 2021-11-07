@@ -14,10 +14,14 @@ ext {
             "lifecycle_version"       : "2.4.0",
             "lifecycle_ext_version"   : "2.2.0",
             "coroutines_version"      : "1.5.2",
-            "hilt_version"            : "2.38.1",
-            "retrofit_version"        : "2.7.1",
-            "okHttp_vesion"           : "3.14.7",
-            "room_version"            : "2.3.0"
+            "hilt_version"            : "2.40",
+            "retrofit_version"        : "2.9.0",
+            "okHttp_vesion"           : "5.0.0-alpha.2",
+            "room_version"            : "2.3.0",
+            "nav_version"             : "2.3.5",
+            "glide_version"           : "4.12.0"
+
+
     ]
 
     androidx = [
@@ -27,7 +31,9 @@ ext {
             "test_espresso"     : "androidx.test.espresso:espresso-core:${versions.espresso_core_version}",
             "constraintlayout"  : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout_version}",
             "fragment_ktx"      : "androidx.fragment:fragment-ktx:${versions.fragment_ktx_version}",
-            "swiperefreshlayout": "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swipe_refresh_version}"
+            "swiperefreshlayout": "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swipe_refresh_version}",
+            "nav_fragment_ktx"  : "androidx.navigation:navigation-fragment-ktx:${versions.nav_version}",
+            "nav_ui_ktx"        : "androidx.navigation:navigation-ui-ktx:${versions.nav_version}"
     ]
 
     lifecycle = [
@@ -60,5 +66,10 @@ ext {
             "room_runtime" : "androidx.room:room-runtime:${versions.room_version}",
             "room_ktx"     : "androidx.room:room-ktx:${versions.room_version}",
             "room_compiler": "androidx.room:room-compiler:${versions.room_version}"
+    ]
+
+    glide = [
+            "glide"         : "com.github.bumptech.glide:glide:${versions.glide_version}",
+            "glide_compiler": "com.github.bumptech.glide:compiler:${versions.glide_version}"
     ]
 }

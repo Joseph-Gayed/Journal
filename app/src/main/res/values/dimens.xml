@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--general-->
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="page_margin">16dp</dimen>
+    <dimen name="error_image_size">150dp</dimen>
+    <dimen name="default_elevation">8dp</dimen>
+
+    <!--splash-->
+    <dimen name="splash_text_size">48sp</dimen>
+    <dimen name="splash_slogan_l1_text_size">36sp</dimen>
+    <dimen name="splash_slogan_l2_text_size">18sp</dimen>
+    <dimen name="splash_logo_size">220dp</dimen>
+    <dimen name="splash_margin">24dp</dimen>
+    <dimen name="splash_logo_margin">48dp</dimen>
+
+    <!--News List-->
+    <dimen name="item_card_elevation">10dp</dimen>
+    <dimen name="item_card_margin_v">18dp</dimen>
+    <dimen name="item_card_margin_h">7dp</dimen>
+    <dimen name="item_card_text_margin">3dp</dimen>
+    <dimen name="item_title_text_size">18sp</dimen>
+    <dimen name="item_source_text_size">14sp</dimen>
+    <dimen name="item_image_height">220dp</dimen>
+    <dimen name="line_extra_space">8sp</dimen>
+
+</resources>

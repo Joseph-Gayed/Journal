@@ -1,13 +1,14 @@
 package com.jogayed.core.presentation.utils
 
+import androidx.annotation.IntDef
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 
-abstract class BaseRecyclerViewAdapter<T, VH : RecyclerView.ViewHolder> : RecyclerView.Adapter<VH>() {
+abstract class BaseRecyclerViewAdapter<T, VH : RecyclerView.ViewHolder> :
+    RecyclerView.Adapter<VH>() {
 
     var items: List<T> = listOf()
-    var pagedItems: ArrayList<T>? = ArrayList()
     var selectedPos = -1
 
     lateinit var diffUtil: BaseDiffUtil<T>
@@ -17,7 +18,7 @@ abstract class BaseRecyclerViewAdapter<T, VH : RecyclerView.ViewHolder> : Recycl
         return items.size
     }
 
-    fun setData(newItems: List<T>) {
+    open fun setData(newItems: List<T>) {
         if (::diffUtil.isInitialized)
             setDataWithDiffUtil(newItems)
         else {
@@ -49,5 +50,15 @@ abstract class BaseDiffUtil<T> : DiffUtil.Callback() {
 
     override fun getChangePayload(oldPosition: Int, newPosition: Int): Any? {
         return super.getChangePayload(oldPosition, newPosition)
+    }
+}
+
+
+@IntDef(AdapterStatus.Normal, AdapterStatus.Loading, AdapterStatus.Error)
+annotation class AdapterStatus {
+    companion object {
+        const val Normal = 0
+        const val Loading = 1
+        const val Error = 2
     }
 }

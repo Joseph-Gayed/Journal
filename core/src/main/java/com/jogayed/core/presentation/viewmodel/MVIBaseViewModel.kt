@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
  * Base class for all view models that follow the MVI architecture
  */
 @ExperimentalCoroutinesApi
-abstract class MVIBaseViewModel<VS : ViewState, A : Action, R : Result<VS>> : BaseViewModel() {
+abstract class MVIBaseViewModel<A : Action, R : Result<VS>, VS : ViewState> : BaseViewModel() {
 
     //default state
     abstract val defaultInternalViewState: VS
@@ -22,8 +22,9 @@ abstract class MVIBaseViewModel<VS : ViewState, A : Action, R : Result<VS>> : Ba
     private val actionsChannel = Channel<A>(Channel.UNLIMITED)
 
     // steam of view states
-    val viewStates: StateFlow<VS>  =
-         actionsChannel.consumeAsFlow()
+    val viewStates: StateFlow<VS> by lazy {
+
+        actionsChannel.consumeAsFlow()
             .flatMapLatest { action: A ->
                 handleAction(action)
             }
@@ -31,9 +32,12 @@ abstract class MVIBaseViewModel<VS : ViewState, A : Action, R : Result<VS>> : Ba
                 reduce(result)
             }
             .distinctUntilChanged()
-            .stateIn(viewModelScope, SharingStarted.Lazily,defaultInternalViewState.initialState() as VS )
-
-
+            .stateIn(
+                viewModelScope,
+                SharingStarted.Lazily,
+                defaultInternalViewState
+            )
+    }
 
 
     fun executeAction(action: A) {
@@ -44,11 +48,8 @@ abstract class MVIBaseViewModel<VS : ViewState, A : Action, R : Result<VS>> : Ba
 
     abstract fun handleAction(action: A): Flow<R>
 
-    val currentViewState: VS = viewStates.value
 
     open fun reduce(result: R): VS {
-        return result.reduce(defaultInternalViewState, currentViewState)
+        return result.reduce(defaultState = defaultInternalViewState, oldState = viewStates.value)
     }
-
-
 }

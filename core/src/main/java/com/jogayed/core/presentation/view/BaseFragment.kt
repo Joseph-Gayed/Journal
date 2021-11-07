@@ -25,4 +25,8 @@ abstract class BaseFragment : Fragment() {
         init()
         subscribe()
     }
+
+    fun setScreenTitle(text: String) {
+        (activity as? BaseActivity)?.supportActionBar?.title = text
+    }
 }
