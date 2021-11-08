@@ -38,11 +38,12 @@ class NewsRepository @Inject constructor(
 
             val newsList = remoteDataMapper.mapList(networkResponse.newsList)
             if (searchParams.page == NewsApi.FIRST_PAGE) {
-                saveSearchResult(newsList)
                 if (newsList.isEmpty())
                     NewsResult.Empty
-                else
+                else {
+                    saveSearchResult(newsList)
                     NewsResult.SuccessOfFirstPage(newsList, isLastPage)
+                }
             } else
                 NewsResult.SuccessOfLoadingMore(newsList, isLastPage)
         } catch (e: Exception) {

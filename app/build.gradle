@@ -55,18 +55,26 @@ android {
 
 
 dependencies {
+    implementation project(path: ':core')
+
     implementation "com.google.android.material:material:${versions.material_version}"
     implementation androidx.core_ktx
     implementation androidx.appcompat
     implementation androidx.constraintlayout
-    implementation("androidx.cardview:cardview:1.0.0")
+    implementation androidx.cardview
     implementation lifecycle.livedata_ktx
     androidTestImplementation androidx.test_junit
     androidTestImplementation androidx.test_espresso
+
     testImplementation "junit:junit:${versions.junit_version}"
+    testImplementation androidx.test_core_ktx
+    testImplementation androidx.test_junit_ktx
+    testImplementation androidx.arch_core_testing
+    //MockK
+    testImplementation mockk.mockk
+    testImplementation mockk.mockk_agent_jvm
+    testImplementation mockk.mockk_common
 
-
-    implementation project(path: ':core')
 
     //Coroutine
     implementation coroutines.android
@@ -104,6 +112,5 @@ dependencies {
     //Glide
     implementation glide.glide
     kapt glide.glide_compiler
-
 
 }

@@ -22,7 +22,7 @@ interface NewsApi {
 
     companion object {
         const val FIRST_PAGE: Int = AppConsts.DEFAULT_FIRST_PAGE
-        const val PAGE_SIZE: Int = /*AppConsts.DEFAULT_PAGE_SIZE*/6
+        const val PAGE_SIZE: Int = AppConsts.DEFAULT_PAGE_SIZE
     }
 
 }

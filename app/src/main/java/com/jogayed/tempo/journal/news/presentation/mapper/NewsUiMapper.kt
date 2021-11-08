@@ -30,6 +30,7 @@ class NewsUiMapper @Inject constructor() :
     }
 
     private fun getFormattedDate(publishedAt: String): String {
+        if (publishedAt.isEmpty()) return ""
         val inputFormatter = SimpleDateFormat(AppConsts.SERVER_DATE_PATTERN, Locale.getDefault())
         val outputFormatter = SimpleDateFormat(AppConsts.APP_DATE_PATTERN, Locale.getDefault())
         val date = inputFormatter.parse(publishedAt)
